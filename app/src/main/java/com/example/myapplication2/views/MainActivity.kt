@@ -18,6 +18,12 @@ class MainActivity : AppCompatActivity() {
 
         val buttonAddNote: Button = findViewById(R.id.buttonAddNote)
         val buttonViewNotes: Button = findViewById(R.id.buttonViewNotes)
+        val buttonFavoriteNotes: Button = findViewById(R.id.buttonFavoriteNotes)
+
+        buttonFavoriteNotes.setOnClickListener {
+            val intent = Intent(this, FavoritesActivity::class.java)
+            startActivity(intent)
+        }
 
         buttonAddNote.setOnClickListener {
             val intent = Intent(this, AddNoteActivity::class.java)

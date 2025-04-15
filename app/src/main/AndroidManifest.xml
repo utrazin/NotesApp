@@ -22,10 +22,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Nova activity para adicionar notas -->
         <activity android:name=".views.AddNoteActivity" />
-
         <activity android:name=".views.ViewNotesActivity" />
+        <activity android:name=".views.FavoritesActivity" />
 
     </application>
 </manifest>

@@ -36,4 +36,15 @@
         android:backgroundTint="#1976D2"
         android:textStyle="bold"
         android:padding="12dp" />
+
+    <Button
+        android:id="@+id/buttonFavoriteNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notas Favoritas"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1976D2"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>

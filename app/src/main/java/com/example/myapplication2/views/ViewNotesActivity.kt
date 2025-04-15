@@ -4,8 +4,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
@@ -31,6 +29,7 @@ class ViewNotesActivity : AppCompatActivity() {
             val sharedPreferences = getSharedPreferences("NotesApp", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.remove("notes")
+            editor.remove("favorites")
             editor.apply()
 
             Toast.makeText(this, "Notas apagadas com sucesso!", Toast.LENGTH_SHORT).show()
@@ -38,26 +37,15 @@ class ViewNotesActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadNotesFromSharedPreferences(): List<String> {
-        val sharedPreferences = getSharedPreferences("NotesApp", Context.MODE_PRIVATE)
-        val notesSet = sharedPreferences.getStringSet("notes", mutableSetOf())?.toList() ?: listOf()
-
-        return if (notesSet.isEmpty()) {
-            listOf("Nenhuma nota disponível")
-        } else {
-            notesSet.map { note ->
-                val parts = note.split(":")
-                val title = parts.getOrElse(0) { "Sem título" }
-                val description = parts.getOrElse(1) { "Sem descrição" }
-                "$title: $description"
-            }
-        }
-    }
-
     private fun loadNotesIntoListView() {
         val notes = loadNotesFromSharedPreferences()
-        Log.d("ViewNotesActivity", "Notas carregadas: $notes")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, notes)
+        val adapter = NoteAdapter(this, notes)
         listViewNotes.adapter = adapter
+    }
+
+    private fun loadNotesFromSharedPreferences(): List<String> {
+        val sharedPreferences = getSharedPreferences("NotesApp", Context.MODE_PRIVATE)
+        val notesSet = sharedPreferences.getStringSet("notes", mutableSetOf()) ?: setOf()
+        return if (notesSet.isEmpty()) listOf("Nenhuma nota disponível") else notesSet.toList()
     }
 }

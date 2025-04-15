@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#E3F2FD"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Suas Notas"
+    android:textSize="22sp"
+    android:textStyle="bold"
+    android:textColor="#0D47A1"
+    android:layout_gravity="center"
+    android:layout_marginBottom="16dp" />
+
+<Button
+    android:id="@+id/buttonClearNotes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Limpar Notas"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#1976D2"
+    android:padding="12dp"
+    android:textStyle="bold"
+    android:layout_marginBottom="16dp"
+    android:layout_gravity="center"/>
+
+<ListView
+    android:id="@+id/listViewNotes"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:divider="#90CAF9"
+    android:dividerHeight="1dp"
+    android:background="#FFFFFF"
+    android:padding="8dp"/>
+</LinearLayout>

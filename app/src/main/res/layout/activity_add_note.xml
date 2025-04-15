@@ -4,34 +4,37 @@
     android:background="#E3F2FD"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="24dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bem-vindo ao NotesApp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#0D47A1"
-        android:layout_marginBottom="32dp" />
-
-    <Button
-        android:id="@+id/buttonAddNote"
+    <EditText
+        android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adicionar Nota"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#1976D2"
-        android:textStyle="bold"
+        android:hint="Título da nota"
+        android:background="#FFFFFF"
         android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"
+        android:elevation="2dp" />
 
-    <Button
-        android:id="@+id/buttonViewNotes"
+    <EditText
+        android:id="@+id/editTextNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Notas"
+        android:hint="Digite sua nota"
+        android:minHeight="120dp"
+        android:gravity="top"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="24dp"
+        android:elevation="2dp" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
         android:textColor="#FFFFFF"
         android:backgroundTint="#1976D2"
         android:textStyle="bold"

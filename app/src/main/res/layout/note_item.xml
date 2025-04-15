@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/noteItemLayout"
     android:orientation="horizontal"
@@ -7,13 +6,28 @@
     android:padding="12dp"
     android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textViewNote"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#000000"
-        android:textSize="16sp" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#444444"
+            android:paddingStart="2dp"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageViewFavorite"

@@ -22,11 +22,19 @@ class NoteAdapter(
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val itemView = convertView ?: LayoutInflater.from(context).inflate(R.layout.note_item, parent, false)
-        val textViewNote = itemView.findViewById<TextView>(R.id.textViewNote)
+        val textViewTitle = itemView.findViewById<TextView>(R.id.textViewTitle)
+        val textViewBody = itemView.findViewById<TextView>(R.id.textViewBody)
         val imageViewFavorite = itemView.findViewById<ImageView>(R.id.imageViewFavorite)
 
         val note = notes[position]
-        textViewNote.text = note
+
+        // Divide título e texto
+        val parts = note.split(":", limit = 2)
+        val title = parts.getOrNull(0) ?: ""
+        val body = parts.getOrNull(1) ?: ""
+
+        textViewTitle.text = title
+        textViewBody.text = body
 
         val isFavorite = favoriteNotes.contains(note)
         imageViewFavorite.setImageResource(
